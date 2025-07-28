@@ -3,6 +3,12 @@ sudo apt-get update
 sudo apt-get install openjdk-21* -y
 sudo java --version #to check the version of java installed
 
+sudo apt install docker.io* -y
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker ubuntu
+sudo chmod 777 /var/run/docker.sock
+
 sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
